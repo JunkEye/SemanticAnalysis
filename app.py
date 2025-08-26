@@ -12,6 +12,7 @@ from nltk.tokenize import word_tokenize
 from pymongo import MongoClient
 from pymongo.errors import ServerSelectionTimeoutError
 import nltk
+from flask_cors import CORS
 # This is needed for tokenization
 nltk.download('punkt_tab')
 
@@ -32,6 +33,8 @@ api_queries_col = None
 
 # Start
 app = Flask(__name__, static_folder="web/assets")
+
+CORS(app) # Enable CORS for all routes so this can be embedded anywhere, for free
 
 # Cybersecurity: Rate Limiting
 # Prevent abuse of the free API
