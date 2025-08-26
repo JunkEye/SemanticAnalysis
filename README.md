@@ -1,4 +1,4 @@
-Semantic Analysis Web App
+# Semantic Analysis Web App
 
 This project is a containerized web application for semantic analysis.
 It includes a frontend, backend API, MongoDB database, tokenizer, and machine learning model.
@@ -6,13 +6,13 @@ Everything is orchestrated via Docker Compose.
 
 Accessing the website: https://semanticanalysis.sliplane.app
 
-Querying the api: Send a POST request to the website with the comment wrapped in a JSON structure mapping "text" to your comment as a string.
+Querying the API: Send a POST request to the website with the comment wrapped in a JSON structure mapping "text" to your comment as a string.
 
 Project Structure:
 
 * app.py - Main FastAPI/Flask app (serves endpoints)
 * script.py - ML model training script
-* api_query_example.py - Example of a free api call
+* api_query_example.py - Example of a free API call
 * tokenizer.pkl - Pre-fitted tokenizer for text preprocessing
 * web Directory - Contains the frontend information
 * Data Directory - Contains the training data
@@ -23,12 +23,16 @@ Project Structure:
 Running the Project LOCALLY:
 
 1. Clone repo & build containers:
-   git clone <repo-url>
-   cd <repo>
-   Setup your virtual environment with Docker
-   Download the GloVe word embeddings 6B.300d if you wish to train the model yourself or run the script: https://huggingface.co/sentence-transformers/average_word_embeddings_glove.6B.300d
-   Change the `mongo_uri` variable in `app.py` to your database container
-   docker compose up --build
+   * `git clone https://github.com/JunkEye/SemanticAnalysis.git`
+   * `cd <repo>`
+   
+2. Setup your virtual environment with Docker
+
+3. Download the GloVe word embeddings 6B.300d if you wish to train the model yourself or run the script: https://huggingface.co/sentence-transformers/average_word_embeddings_glove.6B.300d
+
+4. Change the `mongo_uri` variable in `app.py` to your database container
+
+5. `docker-compose up --build` when your local setup is complete
 
 2. Access services:
    Frontend: http://localhost:8080
