@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/img/favicon.png">
+
+    <title>Toxicity Analysis</title>
+
+	<link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+
+    <!-- Core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles -->
+    <link href="assets/css/main.css" rel="stylesheet">
+
+    <!-- Fonts from Google Fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,900' rel='stylesheet' type='text/css'>
+    
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><b>Toxicity Analysis</b></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="https://www.linkedin.com/in/juliusmerlino/" target="_blank">Created by Julius Merlino</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+	<div id="headerwrap">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6">
+					<h1>Easy, Fast, Free<br/>
+					Toxicity Detection</h1>
+					<h3>Analyze text for toxicity using our free API. Perfect for moderating comments, emails, and more.</h3>	
+				</div><!-- /col-lg-6 -->
+				<div class="col-lg-6">
+					<img class="img-responsive" src="assets/img/toxic_icon.png" alt="">
+				</div><!-- /col-lg-6 -->
+				
+			</div><!-- /row -->
+		</div><!-- /container -->
+	</div><!-- /headerwrap -->
+	
+	
+	<div class="container">
+		<div class="row mt centered">
+			<div class="col-lg-6 col-lg-offset-3 text-center">
+				<h1>Toxicity Semantic Analysis<br/>Type Anything Below</h1>
+				<h3>This utilizes a 'Long Short-Term Memory' Neural Network to analyze text and report whether the text can be considered 'toxic'.</h3>
+				<h5>Max 2000 Characters</h5>
+				    <!-- Sleek, centered text box -->
+					<form id="analyzeForm" style="margin-top: 10px;" onsubmit="event.preventDefault(); analyzeComment();">
+						<div class="form-group" style="display:flex; justify-content:center;">
+							<textarea 
+								class="form-control form-control-lg" 
+								id="userComment" 
+								rows="5" 
+								maxlength="2000" 
+								placeholder="Paste your comment here (max 2000 characters)" 
+								style="width:100%; max-width: 500px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); padding: 15px; resize:none;"></textarea>
+						</div>
+						<div style="margin-top: 15px;">
+							<button type="submit" class="btn btn-primary btn-lg" style="border-radius: 50px; padding: 10px 30px;">
+								Analyze
+							</button>
+						</div>
+					</form>
+
+					<!-- Result area -->
+					<div id="result" style="margin-top: 20px; font-weight: bold;"></div>
+				</div>
+			</div><!-- /row -->
+		
+		<div class="row mt centered">
+			<div class="col-lg-4">
+				<img src="assets/img/ser01.png" width="180" alt="">
+				<h4>1 - Free API Access</h4>
+				<p>Query our API for free. Simply send a HTTP Post Request with the JSON data payload mapping "text" to your comment.</p>
+			</div><!--/col-lg-4 -->
+
+			<div class="col-lg-4">
+				<img src="assets/img/ser02.png" width="180" alt="">
+				<h4>2 - Applicability</h4>
+				<p>Our tool accepts English text input from various sources, including emails, comments, and other correspondence.</p>
+
+			</div><!--/col-lg-4 -->
+
+			<div class="col-lg-4">
+				<img src="assets/img/ser03.png" width="180" alt="">
+				<h4>3 - Integration</h4>
+				<p>The API call returns the same format, every time. This allows for easy, clean integration within your application or website.</p>
+
+			</div><!--/col-lg-4 -->
+		</div><!-- /row -->
+	</div><!-- /container -->
+	
+
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
